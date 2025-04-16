@@ -26,6 +26,14 @@ This project was created as part of a workshop where students applied their know
 `https://github.com/20251-Ingenieria-WEB/-taller-html-Maritza-Tabarez-Cardenas.git`
 2. Open the `index.html` file in your browser to view the app in action.
 
+
+##Demo
+
+
+
+https://github.com/user-attachments/assets/eff37ecc-e4e4-4ffe-a416-a2518405aa36
+
+
 ## Contributing
 
 If you'd like to contribute to this project, feel free to fork it and submit a pull request.
