@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PokéMarit</title>
+  <link rel="icon" href="/img/pocket monster_icon.png" type="image/png" />
+ 
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css" />
+
+  <!-- Scripts -->
+  <script src="/js/modal.js" defer></script>
+  <script src="/js/utils.js" defer></script>
+  <script src="/js/filter.js" defer></script>
+  <script src="/js/search.js" defer></script>
+  <script src="/js/api.js" defer></script>
+  <script src="/js/render.js" defer></script>
+  <script src="/js/main.js" defer></script>
+  <script src="/js/stats.js" defer></script>
+  <script src="/js/state.js" defer></script>
+  <script src="/js/pokemonCard.js" defer></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <img src="/img/logo.png" alt="PokéMarit Logo" />
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-container">
+    <section id="home-section">
+      <!-- Search & Filter -->
+      <div class="search-container">
+        <div class="input-wrapper">
+          <i class="ti ti-search"></i>
+          <input id="search-input" type="text" placeholder="Search Pokémon..." />
+        </div>
+
+        <!-- Dropdown Filter -->
+        <div class="dropdown-container">
+          <div class="dropdown">
+            <button class="dropbtn">
+              <i class="ti ti-adjustments-horizontal"></i> Types
+            </button>
+            <div class="dropdown-content">
+              <a href="#" data-type="grass">Grass</a>
+              <a href="#" data-type="fire">Fire</a>
+              <a href="#" data-type="water">Water</a>
+              <a href="#" data-type="bug">Bug</a>
+              <a href="#" data-type="normal">Normal</a>
+              <a href="#" data-type="flying">Flying</a>
+              <a href="#" data-type="poison">Poison</a>
+              <a href="#" data-type="electric">Electric</a>
+              <a href="#" data-type="all">All</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pokémon Modal -->
+      <div id="pokemon-modal" class="modal">
+        <div class="modal-content">
+          <span id="close-btn" class="close-btn">&times;</span>
+          <h2>Pokémon Info</h2>
+          <p>
+            <i class="ti ti-arrow-autofit-height"></i>
+            <strong>Height:</strong> <span id="pokemon-height"></span>
+          </p>
+          <p>
+            <i class="ti ti-scale-outline"></i> <strong>Weight:</strong>
+            <span id="pokemon-weight"></span>
+          </p>
+          <p>
+            <i class="ti ti-freeze-row"></i> <strong>Abilities:</strong>
+            <span id="pokemon-abilities"></span>
+          </p>
+          <p>
+            <i class="ti ti-progress"></i> <strong>Evolution:</strong>
+            <span id="pokemon-evolution"></span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Pokémon Cards -->
+      <div class="container-card" id="pokemon-container">
+        <div id="pokemon-card">
+          <img id="pokemon-image" src="" alt="Pokémon Image" />
+        </div>
+      </div>
+
+      <!-- Load More Button -->
+      <div class="load-more-container">
+        <button id="load-more" class="load-more">Load More</button>
+      </div>
+    </section>
+    <div id="error-message"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <ul>
+        <li><i class="ti ti-pokeball"></i> Pokémon API</li>
+        <li>University of Antioquia - Web Engineering</li>
+        <li>© 2025</li>
+      </ul>
+    </div>
+  </footer>
+</body>
+
+</html>
