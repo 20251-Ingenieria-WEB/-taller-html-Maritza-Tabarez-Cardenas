@@ -1,0 +1,473 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Shantell Sans';
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+nav {
+    background-color: #F9F9F9;
+    border-bottom: 1px solid #E0E0E0;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+nav img {
+    width: 75px;
+    height: 28px;
+}
+
+
+.search-container {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper input {
+    border-radius: 25px;
+    border: 1px solid #5c56ce;
+    width: 507px;
+    height: 36px;
+    padding: 0 20px 0 45px;
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 15px;
+    font-size: 20px;
+    color: #5c56ce;
+    pointer-events: none;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #9EC5FF;
+}
+
+#pokemon-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.container-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.pokemon-card {
+    background-color: #f3f7f8;
+    border: 1px solid #8993dc;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 210px;
+    height: 530px;
+    gap: 20px;
+
+}
+
+.pokemon-card h2 {
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.pokemon-card h3 {
+    font-size: 12px;
+    color: #403f3f;
+    margin-left: 5px;
+}
+
+.pokemon-card pokemon-div {
+    font-size: 12px;
+    color: #403f3f;
+    margin-left: 5px;
+}
+
+.pokemon-card img {
+    position: relative;
+    overflow: visible;
+    border-radius: 10px;
+    width: 210px;
+    height: 200px;
+    margin: 0 auto;
+
+}
+
+.pokemon-card img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.pokemon-card p {
+    font-size: 13px;
+    color: #0c0b0b;
+    padding-block: 10px;
+}
+
+.pokemon-card ul {
+    list-style-type: none;
+    padding: 0px 0px 0px 12px;
+    gap: 4px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
+
+.pokemon-card li {
+    background-color: #ffffff;
+    border-radius: 7px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 52px;
+    height: 78px;
+}
+
+.stat-icon {
+    padding: 5px;
+    font-size: 18px;
+}
+
+.stat-label {
+    font-weight: normal;
+    font-size: 10px;
+}
+
+.stat-value {
+    font-weight: bold;
+    font-size: 12px;
+    color: #000000;
+}
+
+.stat-hp {
+    border: 2px solid #FAA2BD;
+}
+
+.stat-hp i {
+    color: #e96d92;
+}
+
+.stat-attack {
+    border: 2px solid #FEACAD;
+}
+
+.stat-attack i {
+    color: #e9888a;
+}
+
+.stat-defense {
+    border: 2px solid #9EC5FF;
+}
+
+.stat-defense i {
+    color: #79abf5;
+}
+
+.stat-special-attack {
+    border: 2px solid #FEE783;
+}
+
+.stat-special-attack i {
+    color: #ead264;
+}
+
+.stat-special-defense {
+    border: 2px solid #95ECB0;
+}
+
+.stat-special-defense i {
+    color: #7bf4a1;
+}
+
+.stat-speed {
+    border: 2px solid #BDE6A1;
+}
+
+.stat-speed i {
+    color: #a6f472;
+}
+
+.dropdown-container {
+    display: flex;
+    padding-left: 15px
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #79abf5;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 10px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #c2d7f7;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #9EC5FF;
+    color: rgb(0, 0, 0);
+}
+
+.load-more-container {
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.load-more {
+    background-color: #9EC5FF;
+    border: none;
+    width: 128px;
+    height: 48px;
+    border-radius: 5px;
+    font-size: medium;
+    display: block;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #9EC5FF;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    width: 120px;
+    height: 28px;
+    align-items: center;
+    margin: 20px auto;
+}
+
+button:hover {
+    background-color: #8aaaeb;
+    color: white;
+}
+
+
+footer {
+    background-color: #F9F9F9;
+    border-top: 1px solid #E0E0E0;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #000;
+    list-style-type: none;
+}
+
+
+/* Modal styling */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+    border-radius: 15px;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 15px;
+    border: 3px solid #8993dc;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.evolution-stage {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+
+.evolution-stage.active {
+    display: flex;
+    opacity: 1;
+}
+
+.evolution-img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 300px;
+    height: 300px;
+}
+
+.evolution-img:hover {
+    transform: scale(1.05);
+}
+
+.next-evo-btn {
+    cursor: pointer;
+    font-size: 24px;
+    margin-top: 10px;
+    transition: transform 0.3s ease;
+}
+
+.next-evo-btn:hover {
+    transform: scale(1.1);
+}
+
+
+.error-message {
+    color: red;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .main-container {
+        padding: 0px;
+    }
+
+    .search-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .input-wrapper input {
+        width: 380px;
+        height: 36px;
+        padding: 0 20px 0 45px;
+    }
+
+    #pokemon-container {
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 420px;
+        padding: 0 10px;
+    }
+
+    .pokemon-card {
+        width: 180px;
+        height: auto;
+    }
+
+    @media (max-width: 768px) {
+        .main-container {
+            padding: 0px;
+        }
+
+        .search-container {
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .input-wrapper input {
+            width: 300px;
+            height: 36px;
+            padding: 0 20px 0 45px;
+        }
+
+        #pokemon-container {
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
+            width: 90%;
+            max-width: 310px;
+            padding: 0 20px;
+        }
+
+        .pokemon-card {
+            width: 200px;
+            height: auto;
+            margin: 10px;
+        }
+
+        .evolution-img {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            width: 150px;
+            height: 150px;
+        }
+    }
+}
