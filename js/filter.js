@@ -1,3 +1,8 @@
+/**
+ * Filters the Pokémon from the API by type and updates the view with the results.
+ * @param {string} type - The type of Pokémon to filter by (e.g., "fire", "water", etc.). If it's "all", all Pokémon are shown.
+ */
+
 function filterPokemonFromAPI(type) {
     const pokemonContainer = document.querySelector("#pokemon-container");
     clearContainer(pokemonContainer);
@@ -24,7 +29,13 @@ function filterPokemonFromAPI(type) {
         });
 }
 
-// Fetch Pokémon list from the API by type
+/**
+ * Fetches a list of Pokémon from the API filtered by type.
+ * @param {string} type - The type of Pokémon to search for (e.g., "fire", "water", etc.).
+ * @returns {Promise<Object[]>} A promise that resolves with a list of Pokémon of that type.
+ * @throws {Error} If an error occurs during the request.
+ */
+
 async function fetchPokemonByType(type) {
     const url = `https://pokeapi.co/api/v2/type/${type}`;
     const response = await fetch(url);
@@ -34,7 +45,11 @@ async function fetchPokemonByType(type) {
     return data.pokemon.map(p => p.pokemon);
 }
 
-// Render a "chunk" (slice) of the filtered Pokémon list, for manual pagination
+/**
+ * Renders a "slice" of the filtered Pokémon list, with support for manual pagination.
+ * @returns {void}
+ */
+
 function renderFilteredPokemon() {
     const chunk = filteredPokemonList.slice(filteredOffset, filteredOffset + limit);
     chunk.forEach(pokemon => {
@@ -43,9 +58,10 @@ function renderFilteredPokemon() {
     filteredOffset += limit;
 }
 
-
-
-// Setup dropdown menu filters for Pokémon types
+/**
+ * Sets up the type filters in the dropdown menu to filter Pokémon.
+ * @returns {void}
+ */
 function setupTypeFilters() {
     document.querySelectorAll(".dropdown-content a").forEach(link => {
         link.addEventListener("click", (e) => {

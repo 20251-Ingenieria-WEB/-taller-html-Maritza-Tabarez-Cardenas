@@ -1,3 +1,4 @@
+/* Global styles */
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +6,7 @@
     font-family: 'Shantell Sans';
 }
 
+/* Main container styling */
 .main-container {
     display: flex;
     flex-direction: column;
@@ -13,6 +15,7 @@
     min-height: 100vh;
 }
 
+/* Navigation bar styling */
 nav {
     background-color: #F9F9F9;
     border-bottom: 1px solid #E0E0E0;
@@ -25,7 +28,7 @@ nav img {
     height: 28px;
 }
 
-
+/* Search container with input field */
 .search-container {
     padding-top: 30px;
     display: flex;
@@ -48,6 +51,7 @@ nav img {
     padding: 0 20px 0 45px;
 }
 
+/* Icon inside the search input field */
 .input-wrapper i {
     position: absolute;
     left: 15px;
@@ -63,6 +67,7 @@ input:focus {
     border: 1px solid #9EC5FF;
 }
 
+/* Pokémon card container grid */
 #pokemon-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -75,6 +80,7 @@ input:focus {
 
 }
 
+/* Individual Pokémon card styling */
 .pokemon-card {
     background-color: #f3f7f8;
     border: 1px solid #8993dc;
@@ -105,6 +111,7 @@ input:focus {
     margin-left: 5px;
 }
 
+/* Image styling inside Pokémon card */
 .pokemon-card img {
     position: relative;
     overflow: visible;
@@ -126,6 +133,7 @@ input:focus {
     padding-block: 10px;
 }
 
+/* Pokémon stat styling */
 .pokemon-card ul {
     list-style-type: none;
     padding: 0px 0px 0px 12px;
@@ -145,6 +153,7 @@ input:focus {
     height: 78px;
 }
 
+/* Specific styling for each stat type */
 .stat-icon {
     padding: 5px;
     font-size: 18px;
@@ -402,6 +411,7 @@ footer {
     display: none;
 }
 
+/* Mobile responsiveness */
 @media (max-width: 480px) {
     .main-container {
         padding: 0px;
@@ -432,6 +442,7 @@ footer {
         height: auto;
     }
 
+    /* Mobile responsiveness */
     @media (max-width: 768px) {
         .main-container {
             padding: 0px;

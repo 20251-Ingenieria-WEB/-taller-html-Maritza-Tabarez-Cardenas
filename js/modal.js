@@ -1,3 +1,12 @@
+/**
+ * Opens the Pokémon details modal with its information (height, weight, abilities, etc.).
+ * Handles errors if any element is not found or if an issue occurs during rendering.
+ * @param {number} height - The height of the Pokémon in centimeters.
+ * @param {number} weight - The weight of the Pokémon in kilograms.
+ * @param {Array} abilities - List of the Pokémon's abilities.
+ * @param {Array} evolutionData - Information about the Pokémon's evolution.
+ * @returns {void}
+ */
 function openModal(height, weight, abilities, evolutionData) {
   try {
     const modal = document.getElementById("pokemon-modal");
@@ -8,10 +17,17 @@ function openModal(height, weight, abilities, evolutionData) {
 
     modal.style.display = "block";
   } catch (error) {
-    console.error("Error opening modal:", error);
-    showUserError("Something went wrong while displaying the Pokémon details.");
+    //console.error("Error opening modal:", error);
+    showUserError("Something went wrong");
   }
 }
+/**
+ * Sets the Pokémon's information (height, weight, and abilities) in the modal elements.
+ * @param {number} height - The height of the Pokémon in centimeters.
+ * @param {number} weight - The weight of the Pokémon in kilograms.
+ * @param {Array} abilities - List of the Pokémon's abilities.
+ * @returns {void}
+ */
 
 function setPokemonInfo(height, weight, abilities) {
   const heightElement = document.getElementById("pokemon-height");
@@ -33,6 +49,11 @@ function setPokemonInfo(height, weight, abilities) {
     abilityElement.innerText = "N/A";
   }
 }
+/**
+ * Renders the Pokémon's evolution stages in the modal.
+ * @param {Array} evolutionData - The Pokémon's evolution data.
+ * @returns {void}
+ */
 
 function renderEvolutionStages(evolutionData) {
   const evolutionElement = document.getElementById("pokemon-evolution");
@@ -50,10 +71,18 @@ function renderEvolutionStages(evolutionData) {
       const container = createEvolutionStage(stage, index, evolutionData.length);
       evolutionElement.appendChild(container);
     } catch (e) {
-      console.warn("Error rendering evolution stage:", e);
+      //console.warn("Error rendering evolution stage:", e);
+      showUserError("Something went wrong");
     }
   });
 }
+/**
+ * Creates a container for a specific evolution stage.
+ * @param {Object} stage - Information about the evolution stage (name, image, etc.).
+ * @param {number} index - The index of the evolution stage in the array.
+ * @param {number} totalStages - The total number of evolution stages.
+ * @returns {HTMLElement} An HTML container with the evolution stage information.
+ */
 
 function createEvolutionStage(stage, index, totalStages) {
   if (!stage || !stage.img || !stage.name) {
@@ -88,6 +117,12 @@ function createEvolutionStage(stage, index, totalStages) {
 
   return container;
 }
+/**
+ * Fetches the evolution chain data of a Pokémon.
+ * @param {number} pokemonId - The ID of the Pokémon whose evolution chain will be fetched.
+ * @param {function} callback - The callback function that will be executed with the evolution data.
+ * @returns {void}
+ */
 
 async function pokemonEvolution(pokemonId, callback) {
   try {
@@ -116,10 +151,15 @@ async function pokemonEvolution(pokemonId, callback) {
 
     callback(evolutionDataWithImages);
   } catch (err) {
-    console.error("Error fetching evolution chain:", err);
+    // console.error("Error fetching evolution chain:", err);
+    showUserError("Something went wrong");
     callback([]);
   }
 }
+/**
+ * Closes the Pokémon details modal.
+ * @returns {void}
+ */
 
 function closeModal() {
   const modal = document.getElementById("pokemon-modal");
